@@ -1,2 +1,2 @@
 # termutil
-A collection of useful commands for the terminal
+A collection of useful C functions for the terminal
