@@ -1,4 +1,4 @@
-/* TermUtil *nix terminal utility library 1.2 (C) 2021 PQCraft */
+/* TermUtil *nix terminal utility library 1.3 (C) 2021 PQCraft */
 
 #ifndef TERMUTIL_H
 #define TERMUTIL_H
@@ -24,6 +24,13 @@ struct cursor {
 
 struct cursor* srstack = NULL;
 int srstackp = 0;
+
+// Gets the size of the terminal and returns a winsize struct
+// Use the ws_col and ws_row winsize struct variables to get the size
+inline struct winsize getTermSize() {
+    ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+}
+
 
 // Gets the number of characters in stdin
 inline int kbhit() {
